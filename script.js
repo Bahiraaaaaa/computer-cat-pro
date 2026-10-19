@@ -560,7 +560,7 @@
     // 依照行進方向決定貓咪面向。
     catSprite.style.setProperty(
       "--facing",
-      target.x < start.x ? "-1" : "1"
+      target.x < start.x ? "1" : "-1"
     );
 
     function frame(now) {
