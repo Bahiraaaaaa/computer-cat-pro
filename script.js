@@ -646,6 +646,11 @@ catSprite.style.setProperty(
     clearTimer("movementTimer");
 
     state.mode = "interacting";
+    // 開始互動時，讓小貓的臉朝向物品
+    catSprite.style.setProperty(
+  "--facing",
+  object.x >= state.x ? "1" : "-1"
+   );
     setMood(`💗 正在和${toy.name}互動`);
     setBubble(toy.message);
 
