@@ -880,7 +880,7 @@
   function init() {
     renderToys();
     updateCatName();
-    catSprite.style.setProperty("--facing", "1");
+    catSprite.style.setProperty("--facing", "-1");
     catSprite.style.setProperty("--cat-size", "64px");
     updateStats();
     updateCatPosition();
