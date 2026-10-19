@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff5f7">
+  <meta name="description" content="一起照顧可愛的馬卡龍小貓！">
+  <title>Macaron Kitty｜奶油貓咪物語</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="回到遊戲首頁">
+        <span class="brand-icon">🐈</span>
+        <span>
+          <strong>Macaron Kitty</strong>
+          <small>奶油貓咪物語</small>
+        </span>
+      </a>
+
+      <div class="stats">
+        <div class="stat-pill">
+          <span>💕</span>
+          <span>親密度 <b id="affection">0</b></span>
+        </div>
+        <div class="stat-pill">
+          <span>🐾</span>
+          <span>互動 <b id="interactions">0</b></span>
+        </div>
+        <button id="resetBtn" class="reset-btn" type="button">
+          ↻ 重來
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">A LITTLE WORLD FULL OF LOVE</p>
+          <h1>今天也要好好陪伴小貓 <span>♡</span></h1>
+          <p class="welcome-text">
+            放下喜歡的玩具和點心，看看小貓會做什麼吧！
+          </p>
+        </div>
+        <div class="welcome-decoration" aria-hidden="true">
+          🌷 🫧 🍓
+        </div>
+      </section>
+
+      <div class="game-layout">
+        <section class="game-card" aria-label="小貓遊戲區">
+          <div class="scene-heading">
+            <div class="room-title">
+              <span class="online-dot"></span>
+              <div>
+                <strong id="catNameDisplay">奶油的小房間</strong>
+                <label class="cat-name-control" for="catNameInput">
+                  <span>幫貓咪取個名字</span>
+                  <input id="catNameInput" type="text" maxlength="12"
+                         value="奶油" placeholder="輸入貓咪名字"
+                         autocomplete="off" aria-label="貓咪名字">
+                </label>
+              </div>
+            </div>
+            <span id="mood" class="mood-pill" aria-live="polite">
+              ☀️ 自由漫步中
+            </span>
+          </div>
+
+          <div id="scene" class="scene">
+            <div class="scene-sun" aria-hidden="true">☀️</div>
+            <div class="scene-cloud cloud-one" aria-hidden="true">☁️</div>
+            <div class="scene-cloud cloud-two" aria-hidden="true">☁️</div>
+
+            <div class="garden-flower flower-one" aria-hidden="true">🌼</div>
+            <div class="garden-flower flower-two" aria-hidden="true">🌷</div>
+            <div class="garden-flower flower-three" aria-hidden="true">🌸</div>
+
+            <div class="scene-hint" id="sceneHint">
+              選一個喜歡的物品，放進花園吧！
+            </div>
+
+            <div id="cat" class="cat" role="img" aria-label="正在自由活動的小貓">
+              <div id="catBubble" class="cat-bubble" aria-live="polite">喵～</div>
+              <div id="angerIndicator" class="anger-indicator" aria-hidden="true">💢</div>
+              <div id="catSprite" class="cat-sprite">🐈</div>
+            </div>
+
+            <div id="itemsLayer" class="items-layer"
+                 aria-label="已放置的互動物品"></div>
+            <div id="effectsLayer" class="effects-layer"
+                 aria-hidden="true"></div>
+
+            <div class="scene-grass" aria-hidden="true"></div>
+          </div>
+
+          <div class="scene-footer">
+            <span>🌱 一個小小的、充滿愛的世界</span>
+            <span id="itemCount">場景物品：0</span>
+          </div>
+        </section>
+
+        <section class="toy-panel" aria-label="互動物品選單">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">PICK SOMETHING CUTE</p>
+              <h2>🎀 貓咪的禮物盒</h2>
+              <p class="panel-description">
+                點選物品，再點擊花園放置；也可以直接拖曳。
+              </p>
+            </div>
+            <span class="toy-count">22 ITEMS</span>
+          </div>
+
+          <div class="category-tabs" role="group" aria-label="物品分類">
+            <button class="category-tab active" data-category="all"
+                    type="button" aria-pressed="true">全部</button>
+            <button class="category-tab" data-category="food"
+                    type="button" aria-pressed="false">🍓 點心</button>
+            <button class="category-tab" data-category="toy"
+                    type="button" aria-pressed="false">🧶 玩具</button>
+            <button class="category-tab" data-category="rest"
+                    type="button" aria-pressed="false">🛏️ 休息</button>
+            <button class="category-tab" data-category="nature"
+                    type="button" aria-pressed="false">🌷 自然</button>
+            <button class="category-tab" data-category="magic"
+                    type="button" aria-pressed="false">💖 魔法</button>
+          </div>
+
+          <div id="toyGrid" class="toy-grid">
+            <!-- 由 JavaScript 產生 22 個物品按鈕 -->
+          </div>
+
+          <div class="panel-tip">
+            <span>💡</span>
+            <span id="selectionHint" aria-live="polite">
+              小提示：牛奶可以讓小貓幸福地喝上三秒鐘！
+            </span>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Made with ♡ and lots of meows.</p>
+      <p>Macaron Kitty · 讓每一次相遇都變得可愛</p>
+    </footer>
+
+    <div id="liveMessage" class="sr-only"
+         role="status" aria-live="polite"></div>
+  </div>
+</body>
+</html>
