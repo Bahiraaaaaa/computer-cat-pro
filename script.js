@@ -627,7 +627,7 @@ catSprite.style.setProperty(
     object.busy = true;
     object.element.classList.add("is-target");
 
-    const side = object.x >= state.x ? 1 : -1;
+    const side = object.x >= state.x ? -1 : 1;
     const approach = {
       x: Math.max(8, Math.min(92, object.x + side * 7)),
       y: Math.max(25, Math.min(82, object.y))
