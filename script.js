@@ -31,42 +31,35 @@
       id: "milk", emoji: "🥛", name: "香濃牛奶",
       category: "food", consume: true,
       duration: 3000, action: "drink",
-      message: "咕嚕咕嚕～好喝！", effect: "💗",
-      tip: "小貓會在牛奶旁喝上三秒，然後開心地冒出愛心！"
+      message: "咕嚕咕嚕～", effect: "💗",
+      tip: "在小貓間大受歡迎的飲品"
     },
     {
       id: "fish", emoji: "🐟", name: "新鮮小魚",
       category: "food", consume: true,
       duration: 2300, action: "eat",
       message: "魚魚最棒了！", effect: "💖",
-      tip: "小貓會開心吃魚，結束後送你一顆愛心。"
+      tip: "貓抓老鼠是天性"
     },
     {
       id: "cookie", emoji: "🍪", name: "小餅乾",
       category: "food", consume: true,
       duration: 1900, action: "eat",
       message: "喀滋喀滋～", effect: "✨",
-      tip: "香香的小餅乾，讓小貓開心吃點心。"
+      tip: "天然曲奇。人類的點心，不知道貓咪能不能吃"
     },
     {
       id: "strawberry", emoji: "🍓", name: "甜甜草莓",
       category: "food", consume: true,
       duration: 1800, action: "sniff",
-      message: "聞起來好香！", effect: "⭐",
+      message: "好香！", effect: "⭐",
       tip: "小貓會好奇地聞一聞草莓。"
-    },
-    {
-      id: "cake", emoji: "🧁", name: "奶油蛋糕",
-      category: "food", consume: true,
-      duration: 2200, action: "sniff",
-      message: "這是什麼甜甜的？", effect: "💗",
-      tip: "讓小貓聞聞可愛的小蛋糕。"
     },
     {
       id: "yarn", emoji: "🧶", name: "毛線球",
       category: "toy", consume: false,
       duration: 2400, action: "play",
-      message: "抓到你了！", effect: "✨",
+      message: "抓到了！", effect: "✨",
       tip: "小貓會興奮地撥弄毛線球。"
     },
     {
@@ -157,7 +150,7 @@
       id: "bubble", emoji: "🫧", name: "夢幻泡泡",
       category: "magic", consume: false,
       duration: 2200, action: "play",
-      message: "泡泡別跑！", effect: "🫧",
+      message: "喵！", effect: "🫧",
       tip: "小貓會追逐夢幻泡泡。"
     },
     {
@@ -171,15 +164,15 @@
       id: "coffee", emoji: "☕", name: "苦苦咖啡",
       category: "food", consume: true,
       duration: 1200, action: "forbidden",
-      message: "我不能吃這個！", effect: "💢",
-      tip: "咖啡不適合貓咪！小貓會拒絕並丟掉它，親密度 -2。"
+      message: "我不能喝這個！", effect: "💢",
+      tip: "貓能喝嗎？"
     },
     {
       id: "chocolate", emoji: "🍫", name: "濃郁巧克力",
       category: "food", consume: true,
       duration: 1200, action: "forbidden",
       message: "我不能吃這個！", effect: "💢",
-      tip: "巧克力對貓咪有害！小貓會拒絕並丟掉它，親密度 -2。"
+      tip: "貓能吃嗎？"
     }
   ];
 
@@ -887,7 +880,7 @@
   function init() {
     renderToys();
     updateCatName();
-    catSprite.style.setProperty("--facing", "1");
+    catSprite.style.setProperty("--facing", "-1");
     catSprite.style.setProperty("--cat-size", "64px");
     updateStats();
     updateCatPosition();
