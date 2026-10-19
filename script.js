@@ -561,7 +561,7 @@
     
 catSprite.style.setProperty(
   "--facing",
-  target.x < start.x ? "1" : "-1"
+  target.x < start.x ? "-1" : "1"
 );
     function frame(now) {
       if (state.mode !== "walking") return;
@@ -649,8 +649,8 @@ catSprite.style.setProperty(
     // 開始互動時，讓小貓的臉朝向物品
     catSprite.style.setProperty(
   "--facing",
-  object.x >= state.x ? "-1" : "1"
-   );
+  object.x >= state.x ? "1" : "-1"
+);
     setMood(`💗 正在和${toy.name}互動`);
     setBubble(toy.message);
 
@@ -885,11 +885,6 @@ catSprite.style.setProperty(
   function init() {
     renderToys();
     updateCatName();
-
-catSprite.style.setProperty(
-  "--facing",
-  target.x < start.x ? "-1" : "1"
-);
 
     catSprite.style.setProperty("--cat-size", "64px");
     updateStats();
